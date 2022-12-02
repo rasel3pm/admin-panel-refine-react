@@ -13,6 +13,7 @@ import "@pankod/refine-antd/dist/styles.min.css";
 import routerProvider from "@pankod/refine-react-router-v6";
 import { CategoryCreate, CategoryEdit, CategoryList, CategoryShow } from "pages";
 import { PostCreate, PostEdit, PostList, PostShow } from "pages";
+import { UserCreate,UserShow,UserEdit,UserList} from "pages";
 
 
 function App() {
@@ -25,20 +26,27 @@ function App() {
     catchAll={<ErrorComponent />}
     routerProvider={routerProvider}
     resources={[
-      {name:"categories",
-    list:CategoryList,
-    edit:CategoryEdit,
-    create:CategoryCreate,
-    show:CategoryShow},
-    {
-      name:"posts",
-      list:PostList,
-      edit:PostEdit,
-      create:PostCreate,
-      show:PostShow
-    }
+          {name:"categories",
+        list:CategoryList,
+        edit:CategoryEdit,
+        create:CategoryCreate,
+        show:CategoryShow},
 
-]}
+        {
+          name:"posts",
+          list:PostList,
+          edit:PostEdit,
+          create:PostCreate,
+          show:PostShow
+        },
+        {
+          name:"users",
+          create:UserCreate,
+          show:UserShow,
+          edit:UserEdit,
+          list:UserList
+        },
+      ]}
   />
     
   );
